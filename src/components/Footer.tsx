@@ -47,7 +47,7 @@ export default function Footer() {
       {/* Big CTA marquee */}
       <a href={`mailto:${profile.email}`} className="group block py-10" data-cursor="hover">
         <Marquee
-          items={["Hire me", "Let's build", "Hire me", "Let's build"]}
+          items={["Let's build", "Let's build", "Let's build", "Let's build"]}
           duration={22}
           itemClassName="transition-colors duration-300 group-hover:text-accent"
         />

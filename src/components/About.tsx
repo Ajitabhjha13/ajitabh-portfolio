@@ -9,7 +9,7 @@ import {
   animate,
 } from "framer-motion";
 import { Download } from "lucide-react";
-import { profile, stats, aboutTags, currentFocus, techStack } from "@/data/portfolio";
+import { profile, stats, aboutTags, currentFocus, techStack, certifications } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
 
 function Counter({
@@ -119,6 +119,8 @@ export default function About() {
           <div className="flex flex-wrap gap-4">
             <a
               href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-widest text-bg transition-transform duration-300 hover:scale-105"
             >
               <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -145,7 +147,7 @@ export default function About() {
           </div>
 
           {/* Stats */}
-          <div className="mt-6 inline-flex items-center gap-5 rounded-2xl border border-line bg-surface px-7 py-6">
+          <div className="mt-6 flex flex-wrap gap-4">
             {stats.map((s) => (
               <motion.div
                 key={s.label}
@@ -153,6 +155,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="rounded-2xl border border-line bg-surface px-7 py-6"
               >
                 <p className="font-display text-4xl font-extrabold text-accent md:text-5xl">
                   <Counter value={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
@@ -181,6 +184,38 @@ export default function About() {
           <p className="text-lg leading-relaxed text-muted md:text-xl">
             {currentFocus}
           </p>
+        </div>
+      </motion.div>
+
+      {/* Certifications — compact panel, matches Current Focus styling */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="mt-6 rounded-2xl border border-line bg-surface p-6 sm:p-8"
+      >
+        <p className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">
+          Certifications
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {certifications.map((cert) => (
+            <a
+              key={cert.name}
+              href={cert.file}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="hover"
+              className="group rounded-xl border border-line bg-bg px-4 py-3 transition-colors hover:border-accent"
+            >
+              <p className="text-sm font-medium leading-snug text-fg transition-colors group-hover:text-accent">
+                {cert.name}
+              </p>
+              <p className="mt-1.5 font-mono text-[10px] uppercase tracking-widest text-muted">
+                {cert.org} · {cert.year}
+              </p>
+            </a>
+          ))}
         </div>
       </motion.div>
     </section>

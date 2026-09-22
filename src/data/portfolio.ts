@@ -36,6 +36,7 @@ export const socials = [
 
 export const stats: { value: number; suffix: string; label: string; decimals?: number }[] = [
   { value: 2, suffix: "+", label: "Projects built" },
+  { value: 1, suffix: "", label: "Internship" },
 ];
 
 export const aboutTags = [
@@ -52,29 +53,20 @@ export const techStack = [
   "Core Java",
   "DSA",
   "Git",
-  "Maven & Gradle",
-  "JUnit",
-  "JDBC",
-  "Servlets & JSP",
   "REST APIs",
-  "Hibernate",
-  "Spring Framework",
-  "Spring Boot",
-  "Spring Security",
-  "JWT & OAuth2",
   "MongoDB",
-  "Docker",
-  "Cloud Deployment",
-  "Microservices",
-  "Kafka",
-  "Linux",
-  "Jenkins",
-  "Terraform",
-  "Spring AI",
+  "Spring Boot",
 ];
 
 export const currentFocus =
   "Building real-world projects, strengthening my DSA and Java fundamentals, and exploring how AI tools and cloud deployment fit into modern software development.";
+
+export const certifications = [
+  { name: "AWS Academy Graduate — Cloud Foundations", org: "AWS Academy", year: "2025", file: "/certificates/aws-cloud-foundations.pdf" },
+  { name: "Cisco CCNA: Networking Essentials, Switching, Routing & Security", org: "Cisco Networking Academy", year: "2024", file: "/certificates/cisco-ccna.pdf" },
+  { name: "AI Fundamentals with IBM SkillsBuild", org: "IBM / Cisco Networking Academy", year: "2025", file: "/certificates/ibm-ai-fundamentals.pdf" },
+  { name: "Data Analytics Job Simulation", org: "Deloitte, via Forage", year: "2026", file: "/certificates/deloitte-data-analytics.pdf" },
+];
 
 export const marqueeItems = [
   "React",
@@ -156,21 +148,24 @@ export const projects: Project[] = [
     title: "Bite Rush",
     year: "2026",
     description:
-      "A full-stack online food ordering platform where customers browse a category-filtered menu, manage a real-time cart, and place orders, while restaurant admins manage menu items and update order status (Received → Preparing → Ready → Delivered) through a dedicated dashboard.",
-    stack: ["Node.js", "Express.js", "MongoDB / MySQL", "JWT Auth", "Bootstrap 5"],
+      "A full-stack food ordering platform with category-filtered menu browsing, a real-time cart with quantity controls, and one-click checkout with server-side price validation. Includes a restaurant admin dashboard with a live auto-refreshing orders table, a 4-stage status pipeline (Received → Preparing → Ready → Delivered), and full menu CRUD — secured with JWT + bcrypt role-based auth across a 12+ endpoint REST API.",
+    stack: ["Node.js", "Express.js", "MongoDB Atlas", "JWT + bcrypt", "Bootstrap 5", "Render"],
+    image: "/images/project-bite-rush.jpg",
+    github: "https://github.com/Ajitabhjha13/bite-rush",
+    live: "https://bite-rush-frontend.onrender.com/",
     highlight: "Solo project · Full-stack",
-    // TODO: add github/live once pushed and deployed, and an /images screenshot once ready
   },
   {
     index: "02",
     title: "AR Classroom Seating & Attendance",
     year: "2026",
     description:
-      "A web-based classroom seating and attendance system with real-time updates and an AR-style 3D room visualization. Includes an admin dashboard with a live seat map and CSV export, a student check-in portal, and QR-code-based check-in — all synced live via Socket.io.",
-    stack: ["Node.js", "Express", "Socket.io", "A-Frame (WebXR)", "JavaScript"],
+      "A WebXR-based attendance system with real-time 3D seat visualization using A-Frame, replacing manual roll calls. Seat claims sync instantly across devices via Socket.io, with QR-code room anchoring for student check-in and role-based auth (Faculty/Student) across a 10+ endpoint REST API.",
+    stack: ["Node.js", "Express", "Socket.io", "A-Frame (WebXR)", "bcrypt", "Railway"],
+    image: "/images/project-ar-classroom.jpg",
     github: "https://github.com/Ajitabhjha13/ar-classroom-attendance",
+    live: "https://ar-classroom-attendance.onrender.com/",
     highlight: "Real-time · AR/WebXR",
-    // TODO: add a live link once deployed, and an /images screenshot once ready
   },
 ];
 
@@ -184,6 +179,18 @@ export type ExperienceItem = {
 
 // TODO: double-check the years below match your actual admission/graduation years.
 export const experience: ExperienceItem[] = [
+  {
+    period: "Aug 2026 — Present",
+    role: "Software Development Intern",
+    org: "AIValytics",
+    type: "work",
+    points: [
+      "Developing backend services for the company's Job Portal using FastAPI — building RESTful APIs for job listings and candidate applications, with Supabase (PostgreSQL) integration for data persistence and validation.",
+      "Designed the relational database schema for the Courses Dashboard, modelling courses, modules, and student enrollments with normalized tables and foreign-key relationships for consistent, scalable data access.",
+      "Designed and implemented the Courses Dashboard frontend in React, delivering responsive, reusable UI components integrated with backend APIs.",
+      "Authored the team's deployment strategy (GitHub → Render backend → Vercel frontend → CORS configuration → end-to-end testing), and identified exposed secret keys in the environment configuration — recommending key rotation ahead of production release.",
+    ],
+  },
   {
     period: "2023 — 2027",
     role: "B.Tech, Computer Science Engineering",
