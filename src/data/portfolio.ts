@@ -10,7 +10,7 @@ export const profile = {
   name: "Ajitabh Kumar Jha",
   firstName: "Ajitabh",
   lastName: "Kumar Jha",
-  role: "Aspiring Software Engineer",
+  role: "Full Stack Developer",
   tagline: "Final-year CS student ready to learn fast and build real things.",
   location: "Vadodara, India",
   email: "ajitabhjha13@gmail.com",
@@ -29,13 +29,13 @@ export const profile = {
 
 export const socials = [
   { label: "GitHub", href: "https://github.com/Ajitabhjha13" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ajitabh-kumar-jha-476546283" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ajitabhjha13" },
   { label: "LeetCode", href: "https://leetcode.com/u/ajitabhjha13/" },
   { label: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/profile/ajitabhd87y" },
 ];
 
 export const stats: { value: number; suffix: string; label: string; decimals?: number }[] = [
-  { value: 2, suffix: "+", label: "Projects built" },
+  { value: 5, suffix: "", label: "Projects built" },
   { value: 1, suffix: "", label: "Internship" },
 ];
 
@@ -49,8 +49,11 @@ export const aboutTags = [
 // The full spread of tools/tech you're building familiarity with — shown as compact
 // chips in the About section so it stays crisp instead of a long paragraph.
 export const techStack = [
+  "React + TypeScript",
   "MERN Stack",
   "Core Java",
+  "FastAPI",
+  "PostgreSQL",
   "DSA",
   "Git",
   "REST APIs",
@@ -63,7 +66,7 @@ export const currentFocus =
 
 export const certifications = [
   { name: "AWS Academy Graduate — Cloud Foundations", org: "AWS Academy", year: "2025", file: "/certificates/aws-cloud-foundations.pdf" },
-  { name: "Cisco CCNA: Networking Essentials, Switching, Routing & Security", org: "Cisco Networking Academy", year: "2024", file: "/certificates/cisco-ccna.pdf" },
+  { name: "CCNA: Switching, Routing & Enterprise Security", org: "Cisco Networking Academy", year: "2024", file: "/certificates/cisco-ccna.pdf" },
   { name: "AI Fundamentals with IBM SkillsBuild", org: "IBM / Cisco Networking Academy", year: "2025", file: "/certificates/ibm-ai-fundamentals.pdf" },
   { name: "Data Analytics Job Simulation", org: "Deloitte, via Forage", year: "2026", file: "/certificates/deloitte-data-analytics.pdf" },
 ];
@@ -148,8 +151,8 @@ export const projects: Project[] = [
     title: "Bite Rush",
     year: "2026",
     description:
-      "A full-stack food ordering platform with category-filtered menu browsing, a real-time cart with quantity controls, and one-click checkout with server-side price validation. Includes a restaurant admin dashboard with a live auto-refreshing orders table, a 4-stage status pipeline (Received → Preparing → Ready → Delivered), and full menu CRUD — secured with JWT + bcrypt role-based auth across a 12+ endpoint REST API.",
-    stack: ["Node.js", "Express.js", "MongoDB Atlas", "JWT + bcrypt", "Bootstrap 5", "Render"],
+      "A full-stack food ordering and table booking app. Online payments with Razorpay (test mode) where every price and refund is calculated on the server, table booking with a ₹100 deposit, live order-status updates without a refresh, password reset by email, and an admin panel for orders, menu and reservations. Fixed a stored XSS bug found in a security review and covered the app with 199 automated tests.",
+    stack: ["Node.js", "Express.js", "MongoDB Atlas", "Razorpay", "JWT + bcrypt", "Bootstrap 5", "Render"],
     image: "/images/project-bite-rush.jpg",
     github: "https://github.com/Ajitabhjha13/bite-rush",
     live: "https://bite-rush-frontend.onrender.com/",
@@ -157,11 +160,34 @@ export const projects: Project[] = [
   },
   {
     index: "02",
+    title: "AlgoQuest",
+    year: "2026",
+    description:
+      "An offline-first DSA planner I use every day. A greedy scheduler turns 650+ problems and lecture playlists into a day-by-day plan based on my study hours, and reshapes it when I miss a day. GitHub/Google sign-in with JWT, and progress syncs between laptop and phone with optimistic locking and the last 10 versions kept in the cloud.",
+    stack: ["Java 21", "Spring Boot", "Spring Security", "JWT", "TiDB (MySQL)", "Docker", "GitHub Actions"],
+    image: "/images/project-algoquest.jpg",
+    github: "https://github.com/Ajitabhjha13/algoquest",
+    live: "https://ajitabhjha13.github.io/algoquest/",
+    highlight: "Solo project · Full-stack",
+  },
+  {
+    index: "03",
+    title: "StudyMate AI",
+    year: "2026",
+    description:
+      "An AI study assistant for college students. Ask questions subject by subject, chat with your own PDF notes, take AI-generated quizzes and get personalised revision suggestions based on weak topics, powered by Google Gemini.",
+    stack: ["Node.js", "Express", "MySQL", "Gemini API", "JavaScript"],
+    image: "/images/project-studymate-ai.jpg",
+    github: "https://github.com/Ajitabhjha13/studymate-ai",
+    highlight: "AI · Full-stack",
+  },
+  {
+    index: "04",
     title: "AR Classroom Seating & Attendance",
     year: "2026",
     description:
       "A WebXR-based attendance system with real-time 3D seat visualization using A-Frame, replacing manual roll calls. Seat claims sync instantly across devices via Socket.io, with QR-code room anchoring for student check-in and role-based auth (Faculty/Student) across a 10+ endpoint REST API.",
-    stack: ["Node.js", "Express", "Socket.io", "A-Frame (WebXR)", "bcrypt", "Railway"],
+    stack: ["Node.js", "Express", "Socket.io", "A-Frame (WebXR)", "bcrypt", "Render"],
     image: "/images/project-ar-classroom.jpg",
     github: "https://github.com/Ajitabhjha13/ar-classroom-attendance",
     live: "https://ar-classroom-attendance.onrender.com/",
@@ -181,14 +207,14 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     period: "Aug 2026 — Present",
-    role: "Software Development Intern",
+    role: "Full Stack Developer Intern",
     org: "AIValytics",
     type: "work",
     points: [
-      "Developing backend services for the company's Job Portal using FastAPI — building RESTful APIs for job listings and candidate applications, with Supabase (PostgreSQL) integration for data persistence and validation.",
-      "Designed the relational database schema for the Courses Dashboard, modelling courses, modules, and student enrollments with normalized tables and foreign-key relationships for consistent, scalable data access.",
-      "Designed and implemented the Courses Dashboard frontend in React, delivering responsive, reusable UI components integrated with backend APIs.",
-      "Authored the team's deployment strategy (GitHub → Render backend → Vercel frontend → CORS configuration → end-to-end testing), and identified exposed secret keys in the environment configuration — recommending key rotation ahead of production release.",
+      "Leading frontend development of AIValytics Careers, a student placement platform with job matching across 31 career roles, an application tracker, and AI resume and interview tools, in a two-person engineering team.",
+      "Built 86 pages of a mobile-first React + TypeScript app (Vite, Tailwind CSS, shadcn/ui) on Supabase (PostgreSQL), shipping ~114 pull requests through code review.",
+      "Developed ~118 FastAPI REST endpoints for job listings and candidate applications; designed the database schema and React frontend for a Courses Dashboard.",
+      "Set up the deployment pipeline (FastAPI on Render, frontend on Vercel, CORS config) and caught secret keys exposed in config before release.",
     ],
   },
   {
