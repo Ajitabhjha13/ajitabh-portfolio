@@ -75,7 +75,7 @@ Other scripts: `npm run build`, `npm run start`, `npm run lint`, `npm run typech
 
 ## Contact
 
-- LinkedIn: [ajitabh-kumar-jha](https://www.linkedin.com/in/ajitabh-kumar-jha-476546283)
+- LinkedIn: [ajitabhjha13](https://www.linkedin.com/in/ajitabhjha13)
 - LeetCode: [ajitabhjha13](https://leetcode.com/u/ajitabhjha13/)
 - GeeksforGeeks: [ajitabhd87y](https://www.geeksforgeeks.org/profile/ajitabhd87y)
 
